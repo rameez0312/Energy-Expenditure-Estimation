@@ -41,12 +41,12 @@ def generate_window_dataset(
         step_size = window_size // 2
 
     all_windows = []
-    paticipants = imu["participant"].unique()
+    participants = imu["participant"].unique()
     
-    for pid in tqdm(paticipants, desc="Processing participants"):
+    for pid in tqdm(participants, desc="Processing participants"):
         activities = imu["activity"].unique()
         
-        for act in tqdm(activities, desc=f"pid", leave=False):
+        for act in tqdm(activities, desc=f"{pid}", leave=False):
             imu_sub = imu[(imu["participant"] == pid) & (imu["activity"] == act)]
             zephyr_sub = zephyr[(zephyr["participant"] == pid) & (zephyr["activity"] == act)]
             vo2_sub = vo2[(vo2["participant"] == pid) & (vo2["activity"] == act)]
