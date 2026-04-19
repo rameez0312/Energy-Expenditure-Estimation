@@ -1,0 +1,17 @@
+name: EEE
+channels:
+  - defaults
+dependencies:
+  - python==3.11.9
+  - pandas
+  - matplotlib
+  - jupyter
+  - ipykernel
+  - tsfresh
+  - seaborn
+  - scikit-learn
+  - pyarrow[version='>=14.0.1']
+  - abseil-cpp
+  - xgboost
+  - numpy=1.26.4
+prefix: /Users/admin/miniconda3/envs/EEE
