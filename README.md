@@ -8,10 +8,10 @@ This project develops machine learning models to estimate energy expenditure (VO
 
 - **Data Sources**: Integrates physiological data from Zephyr HR monitors, earbud IMUs, and VO₂ measurements.
 - **Feature Engineering**: Extracts windowed features from time-series data (HR, IMU, respiratory).
-- **Models**: Supports linear regression, ridge, XGBoost, random forest, MLP, and custom PyTorch neural networks.
+- **Models**: linear regression, ridge, XGBoost, random forest, and neural networks.
 - **Validation**: LOSO cross-validation for robust evaluation.
-- **Explainability**: SHAP analysis for model interpretability.
-- **Visualization**: Plots for predictions, feature importance, and Bland-Altman analysis.
+- **Explainability**: SHAP, LIME and IG analysis for model interpretability.
+
 
 ## Installation
 
@@ -40,6 +40,8 @@ Place raw data files in `data/raw/` following the expected structure:
 - `P01/`, `P02/`, etc., with subfolders for ZEPHYR, EARBUDS, VO2.
 - Demographics file: `data/raw/Demographics.csv`.
 
+Note: Also in zephyr folder for each paricipant, rename summary file name to "summary.csv", to ensure same file name for all participants.
+
 ### Running the Pipeline
 Execute the full data processing and fusion pipeline:
 ```bash
@@ -54,12 +56,8 @@ This generates intermediate and final datasets in `data/interim/` and `data/proc
 
 ├── data
 │   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
+│   ├── processed      <- The final data that can be used for model training.
 │   └── raw            <- The original, immutable data dump.
-│
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
 │
 └── src                <- Source code for use in this project.
     │
@@ -70,11 +68,6 @@ This generates intermediate and final datasets in `data/interim/` and `data/proc
     ├── dataset.py              <- Scripts to download or generate data
     │
     ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling
-    │   ├── __init__.py
-    │   ├── predict.py          <- Code to run model inference with trained models
-    │   └── train.py            <- Code to train models
     │
     ├── pipeline
     │   ├── main.py             <- Main pipeline script
@@ -89,7 +82,7 @@ This generates intermediate and final datasets in `data/interim/` and `data/proc
         └── zephyr.py
 ```
 
-## Contributing
+<!-- ## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -97,7 +90,7 @@ Contributions are welcome! Please follow these steps:
 2. Create a feature branch: `git checkout -b feature-name`.
 3. Commit your changes: `git commit -am 'Add feature'`.
 4. Push to the branch: `git push origin feature-name`.
-5. Submit a pull request.
+5. Submit a pull request. -->
 
 
 
