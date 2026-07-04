@@ -8,7 +8,7 @@ PROCESSED_DIR = Path("data/processed")
 
 DEMOGRAPHICS_PATH = BASE_DIR / "Demographics.csv"
 
-EXCLUDED_PARTICIPANTS = ["P14"]
+EXCLUDED_PARTICIPANTS = ["P14","P06"]
 
 # experiment settings
 WINDOW_SIZE = 30

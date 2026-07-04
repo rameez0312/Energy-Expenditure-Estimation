@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 
-
+# For HR, BR and hrv feature extraction and VO2(MET) label mean.
 def extract_zephyr_vo2_features(zephyr_df, vo2_df, window_starts, window_size):
 
     zephyr_df = zephyr_df.set_index("time")
