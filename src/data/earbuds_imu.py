@@ -100,7 +100,6 @@ def compute_magnitude(df):
     df["acc_energy"] = df["acc_mag"] ** 2
     df["gyro_energy"] = df["gyro_mag"] ** 2
 
-    df["movement_intensity"] = df["acc_mag"] * df["gyro_mag"]
     return df
 
 

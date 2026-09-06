@@ -25,9 +25,6 @@ custom_fc_parameters = {
     "number_peaks": [{"n": 5}],
     "skewness": None,
     "kurtosis": None,
-
-    "fft_coefficient": [{"coeff":1,"attr":"abs"}],
-    "fft_aggregated": [{"aggtype":"centroid"}]
 }
 
 
@@ -63,8 +60,7 @@ def extract_imu_features(imu_windowed):
         "acc_mag",
         "gyro_mag",
         "acc_energy",
-        "gyro_energy",
-        "movement_intensity"
+        "gyro_energy"
     ]]
 
     features = extract_features(
